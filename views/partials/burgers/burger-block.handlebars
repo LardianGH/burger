@@ -1,0 +1,9 @@
+<p>
+{{burger_name}}
+
+{{#if devoured}}
+<button class="delete" data-dev="{{devoured}}" data-id="{{this.id}}">digest</button>
+{{else}}
+<button class="eat" data-dev="{{devoured}}" data-id="{{this.id}}">Eat!</button>
+{{/if}}
+</p>

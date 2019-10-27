@@ -1,0 +1,28 @@
+body {
+    background-color: gray;
+}
+
+.burg-box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+}
+
+.not-eaten {
+    float: left;
+    width: 900px;
+    height: 300px;
+    background-color: yellow;
+}
+
+.eaten {
+    float: right;
+    width: 500px;
+    height: 300px;
+    background-color: rgb(54, 50, 50);
+    color: gray;
+}
+
+.form {
+    display: inline-block;
+}
