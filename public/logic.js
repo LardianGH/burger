@@ -1,8 +1,4 @@
 var eat = function() {
-    //alert("hi")
-    //console.log(this.attributes[1].value)
-    //console.log($(this).data("dev"))
-    //location.reload();
 
     var id = $(this).data("id");
 
@@ -24,6 +20,27 @@ var eat = function() {
     );
 }
 
+var create = function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    var newBurger = {
+      name: $("#input").val().trim(),
+      devoured: 0
+    };
+    console.log(newBurger);
+    // Send the POST request.
+    $.ajax("/api/burgers", {
+      type: "POST",
+      data: newBurger
+    }).then(
+      function() {
+        console.log("created a burger");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  };
 
 var digest = function() {
     var id = $(this).data("id");
@@ -42,3 +59,4 @@ var digest = function() {
 
 $(document).on("click", ".delete", digest)
 $(document).on("click", ".eat", eat);
+$(document).on("submit", ".create-form", create);
