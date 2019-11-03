@@ -11,6 +11,7 @@ router.get("/", function(req, res) {
       };
       console.log(hbsObject);
       res.render("index", hbsObject);
+      return res.status(200).end();
     });
   });
 
@@ -51,5 +52,9 @@ router.get("/", function(req, res) {
       }
     });
   });
+
+  router.get("/favicon.ico", function(req, res) {
+    return res.status(200).end();
+  })
 
 module.exports = router;
